@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.omnimc'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    / ASM /
+    implementation 'org.ow2.asm:asm:9.7'
+    implementation 'org.ow2.asm:asm-tree:9.7'
+    implementation 'org.ow2.asm:asm-analysis:9.7'
+    implementation group: 'org.ow2.asm', name: 'asm-commons', version: '9.7'
+    implementation group: 'org.ow2.asm', name: 'asm-util', version: '9.7'
+
+    / Profiler /
+    implementation 'com.github.7orivorian:RuntimeProfiler:1.1.0'
+
+    / Project /
+    //implementation 'org.omnimc:ASMHelper:2.2.9'
+    implementation 'org.omnimc:lumina:1.0.0'
+}
+
+test {
+    useJUnitPlatform()
+}
