@@ -163,7 +163,7 @@ public class ClassModifier {
     /**
      * @return A copy of the current `plainNode` for safe mutation.
      */
-    private ClassNode getPlainNodeCopy() {
+    public ClassNode getPlainNodeCopy() {
         ClassNode copy = new ClassNode();
         plainNode.accept(copy);
         return copy;
