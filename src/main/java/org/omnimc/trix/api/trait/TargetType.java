@@ -22,44 +22,33 @@
  * SOFTWARE.
  */
 
-package org.omnimc.trix.internal;
-
-import org.objectweb.asm.commons.Remapper;
-import org.omnimc.lumina.Mappings;
+package org.omnimc.trix.api.trait;
 
 /**
- * @author <b><a href=https://github.com/CadenCCC>Caden</a></b>
+ * @author <a href=https://github.com/CadenCCC>Caden</a>
  * @since 1.0.0
  */
-public class TrixRemapper extends Remapper {
+public enum TargetType {
+    DIRECT(""),
+    ALL("*");
 
-    private final Mappings mappings;
+    private String target;
 
-    public TrixRemapper(Mappings mappings) {
-        this.mappings = mappings;
+    TargetType(String target) {
+        this.target = target;
     }
 
-    @Override
-    public String map(String internalName) {
-        return mapType(internalName);
+    public String getTarget() {
+        return target;
     }
 
-    @Override
-    public String mapType(String internalName) {
-        return mappings.getClassName(internalName);
-    }
-
-    @Override
-    public String mapMethodName(String owner, String name, String descriptor) {
-        if (descriptor != null) {
-            descriptor = mapMethodDesc(descriptor);
+    public TargetType setTarget(String target) {
+        switch (this) {
+            case ALL:
+                throw new UnsupportedOperationException("Cannot set a target for TargetType.ALL");
+            case DIRECT:
+                this.target = target;
         }
-
-        return mappings.getMethodName(owner, name + descriptor);
-    }
-
-    @Override
-    public String mapFieldName(String owner, String name, String descriptor) {
-        return mappings.getFieldName(owner, name);
+        return this;
     }
 }
