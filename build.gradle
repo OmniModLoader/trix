@@ -27,7 +27,7 @@ dependencies {
 
     / Project /
     //implementation 'org.omnimc:ASMHelper:2.2.9'
-    implementation 'org.omnimc:lumina:1.0.0'
+    implementation 'org.omnimc:lumina:2.0.0'
 }
 
 test {
