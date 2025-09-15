@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package org.omnimc.trix.chain;
+package org.omnimc.trix.api.visitor;
 
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.tree.ClassNode;
