@@ -22,11 +22,11 @@
  * SOFTWARE.
  */
 
-package org.omnimc.trix.internal.mapping;
+package org.omnimc.trix.impl.visitors.mappings;
 
 import org.objectweb.asm.*;
 import org.objectweb.asm.commons.Remapper;
-import org.omnimc.trix.chain.ChainedClassVisitor;
+import org.omnimc.trix.api.visitor.ChainedClassVisitor;
 
 /**
  * @author <b><a href=https://github.com/CadenCCC>Caden</a></b>

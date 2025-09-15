@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package org.omnimc.trix.internal.mapping;
+package org.omnimc.trix.impl.visitors.mappings;
 
 import org.objectweb.asm.*;
 import org.objectweb.asm.commons.Remapper;
