@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HierarchyManager {
+public final class HierarchyManager {
 
     private final Mappings mappings = new Mappings();
 
