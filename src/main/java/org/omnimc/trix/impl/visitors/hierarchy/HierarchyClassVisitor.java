@@ -3,9 +3,9 @@ package org.omnimc.trix.impl.visitors.hierarchy;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.FieldVisitor;
 import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.commons.Remapper;
 import org.omnimc.lumina.data.types.ClassData;
+import org.omnimc.trix.api.asm.Compatibility;
 import org.omnimc.trix.impl.hierarchy.HierarchyManager;
 
 import java.lang.reflect.Modifier;
@@ -23,7 +23,7 @@ public class HierarchyClassVisitor extends ClassVisitor {
     private ClassData classData;
 
     public HierarchyClassVisitor(ClassVisitor classVisitor, Remapper remapper, HierarchyManager hierarchyManager) {
-        super(Opcodes.ASM9, classVisitor);
+        super(Compatibility.ASM_VERSION, classVisitor);
         this.remapper = remapper;
         this.hierarchyManager = hierarchyManager;
     }
