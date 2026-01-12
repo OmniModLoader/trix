@@ -26,6 +26,7 @@ package org.omnimc.trix.impl.visitors.mappings;
 
 import org.objectweb.asm.*;
 import org.objectweb.asm.commons.Remapper;
+import org.omnimc.trix.api.asm.Compatibility;
 import org.omnimc.trix.api.visitor.ChainedClassVisitor;
 
 /**
@@ -39,7 +40,7 @@ public class MappingClassVisitor extends ClassVisitor implements ChainedClassVis
     private String currentClass;
 
     public MappingClassVisitor(ClassVisitor classVisitor, Remapper remapper) {
-        super(Opcodes.ASM9, classVisitor);
+        super(Compatibility.ASM_VERSION, classVisitor);
         this.remapper = remapper;
     }
 

@@ -26,6 +26,7 @@ package org.omnimc.trix.impl.visitors.mappings;
 
 import org.objectweb.asm.*;
 import org.objectweb.asm.commons.Remapper;
+import org.omnimc.trix.api.asm.Compatibility;
 
 /**
  * @author <b><a href=https://github.com/CadenCCC>Caden</a></b>
@@ -37,7 +38,7 @@ public class MappingMethodVisitor extends MethodVisitor {
     private final Remapper remapper;
 
     protected MappingMethodVisitor(String parentClass, Remapper remapper, MethodVisitor methodVisitor) {
-        super(Opcodes.ASM9, methodVisitor);
+        super(Compatibility.ASM_VERSION, methodVisitor);
         this.parentClass = parentClass;
         this.remapper = remapper;
     }
