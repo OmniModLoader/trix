@@ -29,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
 import org.objectweb.asm.commons.Remapper;
 
 /**
- * A `trait` is a modification for a class or a resource.
+ * A `trait` is a modification for a class or a file.
  * <p>
  * We can target all instances or just specific ones with {@link Target}. This is comparable so we can get a priority from the {@link Target} interface.
  *

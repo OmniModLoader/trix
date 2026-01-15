@@ -35,26 +35,26 @@ import java.util.function.BiFunction;
  * @author <a href=https://github.com/CadenCCC>Caden</a>
  * @since 1.0.0
  */
-public interface ResourceTrait extends Trait<byte[]> {
+public interface FileTrait extends Trait<byte[]> {
 
-    static ResourceTrait of(BiFunction<byte[], Remapper, byte[]> modify) {
+    static FileTrait of(BiFunction<byte[], Remapper, byte[]> modify) {
         return of(modify, Target.defaultTarget());
     }
 
-    static ResourceTrait of(BiFunction<byte[], Remapper, byte[]> modify, Target target) {
-        return new InnerResourceTrait(modify, target);
+    static FileTrait of(BiFunction<byte[], Remapper, byte[]> modify, Target target) {
+        return new InnerFileTrait(modify, target);
     }
 
     @Override
     byte[] modify(byte[] nodeToChange, Remapper remapper);
 
     @SuppressWarnings("ClassCanBeRecord")
-    final class InnerResourceTrait implements ResourceTrait {
+    final class InnerFileTrait implements FileTrait {
 
         private final BiFunction<byte[], Remapper, byte[]> modify;
         private final Target target;
 
-        public InnerResourceTrait(BiFunction<byte[], Remapper, byte[]> modify, Target target) {
+        public InnerFileTrait(BiFunction<byte[], Remapper, byte[]> modify, Target target) {
             this.modify = modify;
             this.target = target;
         }
