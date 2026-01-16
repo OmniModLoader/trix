@@ -17,12 +17,12 @@ public class TrixRemapper extends Remapper {
 
     private final McMap chosenMap;
 
-    public TrixRemapper(McMap chosenMap) {
-        this.chosenMap = chosenMap;
+    public TrixRemapper(Namespace namespace) {
+        this(namespace.getProperty());
     }
 
-    public TrixRemapper(Namespace namespace) {
-        this.chosenMap = namespace.getProperty();
+    public TrixRemapper(McMap chosenMap) {
+        this.chosenMap = chosenMap;
     }
 
     @Override
